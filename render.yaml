@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: watch-and-earn-demo
+    env: docker
+    plan: free
+    region: oregon
+    branch: main
+    rootDir: .
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+      - key: ADMIN_TOKEN
+        generateValue: true
+      - key: DATABASE_URL
+        fromDatabase:
+          name: watch-and-earn-db
+          property: connectionString
+
+ databases:
+  - name: watch-and-earn-db
+    databaseName: watch_and_earn
+    user: watch_and_earn
