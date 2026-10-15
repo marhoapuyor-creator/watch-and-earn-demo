@@ -4,6 +4,13 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Watch & Earn - Demo</title>
+  <!-- ADSENSE: Replace ca-pub-REPLACE_WITH_YOUR_ID with your publisher ID. -->
+  <!--
+    To make AdSense live, set your publisher ID below and replace the ad-slot IDs.
+    Example:
+      data-ad-client="ca-pub-1234567890123456"
+  -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-REPLACE_WITH_YOUR_ID" crossorigin="anonymous"></script>
   <style>
     body { font-family: system-ui, Arial; margin: 0; padding: 0; background:#f6f8fb; }
     header { background: #0b63d6; color: white; padding: 16px; }
@@ -44,12 +51,20 @@
       <h2>Advertiser Info / Ad Slot Example</h2>
       <p>Ad slot placeholder — replace with your ad network code after registering:</p>
       <div style="background:#fff3cd;border:1px solid #ffeeba;padding:12px;border-radius:6px">
-        <!-- AD SLOT PLACEHOLDER: Replace the div below with AdSense/GAM code -->
-        <div style="height:90px; display:flex; align-items:center; justify-content:center; color:#856404;">
-          AD SLOT (replace with ad network snippet)
-        </div>
+        <!-- AD SLOT: Example AdSense responsive ad unit (non-functional until you replace the publisher ID and ad-slot) -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-REPLACE_WITH_YOUR_ID"
+             data-ad-slot="1111111111"
+             data-ad-format="auto"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
       </div>
       <a class="cta" href="/video/sample">Open demo video</a>
+    </section>
+
+    <section class="card">
+      <h2>Admin</h2>
+      <p>Access the admin dashboard (view stats) at <a href="/admin">/admin</a>. The admin UI requires an admin token (set ADMIN_TOKEN in env).</p>
     </section>
   </main>
 </body>
