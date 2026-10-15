@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Watch & Earn - Demo</title>
+  <style>
+    body { font-family: system-ui, Arial; margin: 0; padding: 0; background:#f6f8fb; }
+    header { background: #0b63d6; color: white; padding: 16px; }
+    .container { max-width: 1000px; margin: 24px auto; padding: 0 16px; }
+    .card { background: white; border-radius: 8px; padding: 16px; margin-bottom: 16px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+    .video-thumb { width:100%; height:220px; background:#ddd; display:flex; align-items:center; justify-content:center; color:#666; border-radius:6px; }
+    .grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap:16px; }
+    a { color:#0b63d6; text-decoration:none; }
+    .cta { display:inline-block; background:#0b63d6; color:#fff; padding:12px 18px; border-radius:8px; margin-top:8px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Watch & Earn — Demo</h1>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Featured</h2>
+      <div class="grid">
+        <a href="/video/sample" class="card">
+          <div class="video-thumb">Sample Video</div>
+          <h3>Sample video — click to watch</h3>
+          <p>Demonstration video page with ad placeholders.</p>
+        </a>
+
+        <a href="/game/sample-game" class="card">
+          <div class="video-thumb">HTML5 Game</div>
+          <h3>Sample HTML5 Game</h3>
+          <p>An embedded HTML5 game or link to a game page.</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Advertiser Info / Ad Slot Example</h2>
+      <p>Ad slot placeholder — replace with your ad network code after registering:</p>
+      <div style="background:#fff3cd;border:1px solid #ffeeba;padding:12px;border-radius:6px">
+        <!-- AD SLOT PLACEHOLDER: Replace the div below with AdSense/GAM code -->
+        <div style="height:90px; display:flex; align-items:center; justify-content:center; color:#856404;">
+          AD SLOT (replace with ad network snippet)
+        </div>
+      </div>
+      <a class="cta" href="/video/sample">Open demo video</a>
+    </section>
+  </main>
+</body>
+</html>

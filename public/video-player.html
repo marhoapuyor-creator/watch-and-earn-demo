@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sample Video — Watch & Earn Demo</title>
+  <style>
+    body { font-family: system-ui, Arial; margin:0; padding:0; background:#f6f8fb; }
+    .container { max-width:900px; margin:24px auto; padding:0 16px; }
+    .video-wrap { background:#000; padding:8px; border-radius:8px; }
+    .ad-box { margin-top:12px; padding:12px; background:#fff; border:1px solid #ddd; border-radius:6px; }
+    .status { margin-top:12px; color:#333; }
+    button { padding:10px 14px; border:0; border-radius:6px; background:#0b63d6; color:#fff; cursor:pointer; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Sample Video</h1>
+    <div class="video-wrap">
+      <video id="player" width="100%" controls preload="metadata">
+        <source src="/media/sample.mp4" type="video/mp4" />
+        Your browser does not support the video element.
+      </video>
+    </div>
+
+    <div class="ad-box">
+      <strong>Video Ad Placeholder</strong>
+      <p>Insert your video ad integration (Google Ad Manager or other video ad SDK) here.</p>
+    </div>
+
+    <div style="margin-top:12px">
+      <button id="reportView">Report watch (for demo)</button>
+      <p id="status" class="status"></p>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('reportView').addEventListener('click', async () => {
+      const res = await fetch('/api/view', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ mediaId: 'sample' })
+      });
+      const body = await res.json();
+      document.getElementById('status').innerText = 'Server response: ' + (body.ok ? 'logged' : JSON.stringify(body));
+    });
+  </script>
+</body>
+</html>
